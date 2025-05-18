@@ -13,13 +13,10 @@ public interface IMethodBank
     public void penarikanSaldo(string no_rekenign, int tarik_saldo);
     public void setorTunai(string no_rekenign, int setor_tunai);
     public void transferSaldo(string no_rekening, string rekening_tujuan, int nominal_transfer);
-    public void dataRekening();
 }
 public class BankPelita : Bank
 {
-    public BankPelita()
-    {
-    }
+
     public BankPelita(string no_rekening, string nama_pemilik, int saldo, string password)
     {
         this.no_rekening = no_rekening;
@@ -33,7 +30,6 @@ public class ServiceBankPelita : IMethodBank
 {
     public List<BankPelita> banks = new List<BankPelita>
     {
-        new BankPelita("2036","iqbal",100000,"123"),
         new BankPelita("2120","denis",100000,"123"),
 
     };
@@ -68,10 +64,7 @@ public class ServiceBankPelita : IMethodBank
         Console.Write("Transfer Berhasil [Enter untuk kembali]");
         Console.ReadLine();
     }
-    public void dataRekening()
-    {
 
-    }
 }
 class Program
 {
